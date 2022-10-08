@@ -14,6 +14,8 @@ namespace Unit02
         /// <param name="args">The given arguments.</param>
         static void Main(string[] args)
         {
+            // an instance of the Director class is created and 
+            // assigned to a variable called director
             Director director = new Director();
             director.StartGame();
         }

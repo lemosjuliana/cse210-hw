@@ -56,7 +56,7 @@ namespace Unit02.Game
         /// </summary>
         public void DoUpdates()
         {
-            if (!_isPlaying)
+            if (!_isPlaying) // or if (isPlaying == false)
             {
                 return;
             }
