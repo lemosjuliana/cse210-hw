@@ -1,3 +1,5 @@
+ // Code by Juliana Lemos
+ // CSE 210
  namespace Unit02
 {
     public class Hilo 
