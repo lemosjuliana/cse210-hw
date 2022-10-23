@@ -1,0 +1,24 @@
+**********************************************************************
+
+                         J U M P E R  G A M E
+                                  
+                                  b y
+
+                        J u l i a n a  L e m o s
+                        
+**********************************************************************                        
+
+How to play:
+
+    1)  The object of the game is to guess a word before the parachute
+        is destroyed.
+
+    2)  But be advised: you have only four tries! No pressure.
+
+    3)  At any time, hit CTRL + C to exit the game. 
+
+    4)  Have fun!
+
+**********************************************************************                        
+
+                  <<<<<< Hit any key to start >>>>>>>
