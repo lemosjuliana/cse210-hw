@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 
 namespace Unit03
-{
+{   
     /// <summary>
-    /// The "spash" animation for the game. 
+    /// <para> The "splash" animation for the game. </para>
+    /// <para>
+    /// The responsibility of Splash is to display the game's splash.
+    /// </para>
     /// </summary>
     public class Splash
     {
         /// <summary>
-        /// Constructor is private since we have only static methods
+        /// Constructor is private since we have only static methods.
         /// </summary>
         private Splash() 
         {
@@ -18,7 +21,7 @@ namespace Unit03
         }
         
         /// <summary>
-        /// Shows the "splash" for the game and waits for a key being pressed
+        /// Shows the "splash" for the game and waits for a key being pressed.
         /// </summary>
         public static void show()
         {

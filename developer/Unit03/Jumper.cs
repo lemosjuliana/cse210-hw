@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Unit03
 {
     /// <summary>
-    /// <para>The jumper indicating the correct words</para>
+    /// <para> The jumper/parachute design. </para>
     /// <para>
     /// The responsibility of Jumper is to display the parachute.
     /// </para>
@@ -19,7 +19,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Displays parachute layout
+        /// Displays jumper/parachute layout.
         /// </summary>
         public void jump()
         {
@@ -34,7 +34,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Updates the parachute status
+        /// Updates the parachute status.
         /// </summary>
         public void Update()
         {

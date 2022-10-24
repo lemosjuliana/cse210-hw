@@ -80,7 +80,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Clears the console
+        /// Clears the console.
         /// </summary>
         public static void Clear()
         {

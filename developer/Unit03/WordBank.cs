@@ -58,7 +58,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Add the guesses to a list if they are not there yet.
+        /// Adds the guesses to a list if they are not there yet.
         /// </summary>
         /// <returns>True if is not on the list; false if otherwise.</returns>
         public bool MakeGuess(char guess)
@@ -75,7 +75,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Returns if the word was guessed
+        /// Returns if the word was guessed.
         /// </summary>
         /// <returns>True if is guessed; false if otherwise.</returns>
         public bool IsWordGuessed() 
@@ -95,7 +95,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Get random word
+        /// Gets random word.
         /// </summary>
         /// <returns>Random Word</returns>
         public string GetRandomWord()
