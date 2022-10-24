@@ -1,13 +1,13 @@
 ﻿using System;
 
 namespace Unit03
+
 {   /// <summary>
     /// <para>The game that is been played</para>
     /// <para>
-    /// The responsibility of a the Game is to control the sequence of play.
+    /// The responsibility of the Game is to control the sequence of play.
     /// </para>
     /// </summary>
-
     public class Game
     {
         private bool playing;
@@ -18,7 +18,6 @@ namespace Unit03
         /// <summary>
         /// Constructs a new instance of Game.
         /// </summary>
-
         public Game()
         {
             jumper = new Jumper();
@@ -43,7 +42,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// handles random word
+        /// Handles random word.
         /// </summary>
         private void DoUpdates()
         {
@@ -55,7 +54,7 @@ namespace Unit03
                 TerminalService.Clear();
                 jumper.Update();
                 wordBank.Update();
-                // Player failed to guess after 4 tries ?
+                // Player failed to guess after 4 tries 
                 if (! jumper.IsAlive() || triesLeft == 0)
                 {
                     ShowLooserMessage();
@@ -65,7 +64,7 @@ namespace Unit03
                     }
                     return;
                 }
-                // Player successfully guessed?
+                // Player successfully guessed
                 if (wordBank.IsWordGuessed())
                 {
                     ShowWinnerMessage();
@@ -75,7 +74,7 @@ namespace Unit03
                     }
                     return;
                 }
-                // Ask player to make a guess
+                // Asks player to make a guess
                 MakeGuess();
             }
         }
@@ -96,7 +95,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Shows message if the player looses
+        /// Displays message if the player looses.
         /// </summary>
         private void ShowLooserMessage()
         {
@@ -106,7 +105,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Shows message if the player wins
+        /// Displays message if the player wins.
         /// </summary>
         private void ShowWinnerMessage()
         {
@@ -115,7 +114,7 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Asks if the player wants to play again
+        /// Asks if the player wants to play again.
         /// </summary>
         private bool IsPlayerNeedsToTryAgain()
         {
