@@ -58,9 +58,9 @@ namespace Unit03
         }
 
         /// <summary>
-        /// Adds the guesses to a list if they are not there yet.
+        /// Captures the guesses.
         /// </summary>
-        /// <returns>True if is not on the list; false if otherwise.</returns>
+        /// <returns>True if the letter is correct; false if otherwise.</returns>
         public bool MakeGuess(char guess)
         {
             if (randomWord.Contains(guess)) 
