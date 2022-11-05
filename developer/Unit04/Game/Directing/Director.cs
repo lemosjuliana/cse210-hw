@@ -78,7 +78,7 @@ namespace Unit04.Game.Directing
             Actor robot = cast.GetFirstActor("robot");
             List<Actor> artifacts = cast.GetActors("artifacts");
 
-            //!!!
+           
             banner.SetText($"Score: {score.ToString()}");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
