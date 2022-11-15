@@ -12,9 +12,9 @@ namespace Unit03
     /// </summary>
     public class WordBank
     {
-        private List<string> wordList;
-        private List<char> guessesList = new List<char>();
-        private string randomWord;
+        private List<string> _wordList;
+        private List<char> _guessesList = new List<char>();
+        private string _randomWord;
         
         /// <summary>
         /// This class contains methods to handle the list of words and
@@ -22,8 +22,8 @@ namespace Unit03
         /// </summary>
         public WordBank()
         {
-             wordList = new List<string>(File.ReadLines("dictionary.txt"));
-             randomWord = String.Empty;
+             _wordList = new List<string>(File.ReadLines("dictionary.txt"));
+             _randomWord = String.Empty;
         }
         
         /// <summary>
@@ -32,9 +32,9 @@ namespace Unit03
         public void GenerateRandonWord()
         {
             Random random = new Random();
-            int randomIndex = random.Next(0, wordList.Count-1);
-            randomWord = wordList[randomIndex].ToLower();
-            guessesList.Clear();
+            int randomIndex = random.Next(0, _wordList.Count-1);
+            _randomWord = _wordList[randomIndex].ToLower();
+            _guessesList.Clear();
         }
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace Unit03
         public void Update()
         {
             StringBuilder letters = new StringBuilder();
-            foreach (char guess in randomWord)
+            foreach (char guess in _randomWord)
             {
-                if (guessesList.Contains(guess)) 
+                if (_guessesList.Contains(guess)) 
                 {
                     letters.AppendFormat("{0} ", Char.ToUpper(guess));
                 }
@@ -63,11 +63,11 @@ namespace Unit03
         /// <returns>True if the letter is correct; false if otherwise.</returns>
         public bool MakeGuess(char guess)
         {
-            if (randomWord.Contains(guess)) 
+            if (_randomWord.Contains(guess)) 
             {
-                if ( ! guessesList.Contains(guess)) 
+                if ( ! _guessesList.Contains(guess)) 
                 {
-                    guessesList.Add(guess);
+                    _guessesList.Add(guess);
                 }
                 return true;
             }
@@ -80,13 +80,13 @@ namespace Unit03
         /// <returns>True if is guessed; false if otherwise.</returns>
         public bool IsWordGuessed() 
         {
-            if (guessesList.Count == 0)
+            if (_guessesList.Count == 0)
             {
                 return false;
             }
-            foreach(char letter in randomWord)
+            foreach(char letter in _randomWord)
             {
-                if (! guessesList.Contains(letter))
+                if (! _guessesList.Contains(letter))
                 {
                     return false;
                 }
@@ -100,7 +100,7 @@ namespace Unit03
         /// <returns>Random Word</returns>
         public string GetRandomWord()
         {
-            return randomWord.ToUpper();    
+            return _randomWord.ToUpper();    
         }
     }
 

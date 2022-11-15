@@ -10,20 +10,20 @@ namespace Unit03
     /// </summary>
     public class Game
     {
-        private bool playing;
-        private Jumper jumper;
-        private WordBank wordBank;
-        int triesLeft;
+        private bool _playing;
+        private Jumper _jumper;
+        private WordBank _wordBank;
+        int _triesLeft;
 
         /// <summary>
         /// Constructs a new instance of Game.
         /// </summary>
         public Game()
         {
-            jumper = new Jumper();
-            wordBank = new WordBank();
-            playing = false;
-            triesLeft = 0;
+            _jumper = new Jumper();
+            _wordBank = new WordBank();
+            _playing = false;
+            _triesLeft = 0;
         }
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace Unit03
         public void StartGame()
         {
             Splash.show();
-            playing = true;
-            while (playing)
+            _playing = true;
+            while (_playing)
             {
                 DoUpdates();
             }
@@ -46,31 +46,31 @@ namespace Unit03
         /// </summary>
         private void DoUpdates()
         {
-            wordBank.GenerateRandonWord();
-            jumper.jump();
-            triesLeft = 4;
-            while (playing)
+            _wordBank.GenerateRandonWord();
+            _jumper.jump();
+            _triesLeft = 4;
+            while (_playing)
             {
                 TerminalService.Clear();
-                jumper.Update();
-                wordBank.Update();
+                _jumper.Update();
+                _wordBank.Update();
                 // Player failed to guess after 4 tries 
-                if (! jumper.IsAlive() || triesLeft == 0)
+                if (! _jumper.IsAlive() || _triesLeft == 0)
                 {
                     ShowLooserMessage();
                     if (! IsPlayerNeedsToTryAgain())
                     {
-                        playing = false;
+                        _playing = false;
                     }
                     return;
                 }
                 // Player successfully guessed
-                if (wordBank.IsWordGuessed())
+                if (_wordBank.IsWordGuessed())
                 {
                     ShowWinnerMessage();
                     if (! IsPlayerNeedsToTryAgain())
                     {
-                        playing = false;
+                        _playing = false;
                     }
                     return;
                 }
@@ -87,10 +87,10 @@ namespace Unit03
             TerminalService.WriteLine("");
             TerminalService.WriteText("Choose a letter: ");
             char letter = Char.ToLower(TerminalService.ReadChar(false));
-            if (! wordBank.MakeGuess(letter))
+            if (! _wordBank.MakeGuess(letter))
             {
-                jumper.CutRope();
-                triesLeft--;
+                _jumper.CutRope();
+                _triesLeft--;
             }
         }
 
@@ -101,7 +101,7 @@ namespace Unit03
         {
             TerminalService.WriteLine("");
             TextAnimator.WriteLine("SORRY, YOU LOST !", 100);
-            TextAnimator.WriteLine("The secret word was: " + wordBank.GetRandomWord(), 100);
+            TextAnimator.WriteLine("The secret word was: " + _wordBank.GetRandomWord(), 100);
         }
 
         /// <summary>
