@@ -12,7 +12,7 @@ namespace Unit04.Game.Casting
     /// </summary>
     public class Artifact : Actor
     {
-        private int score = 0;
+        private int _score = 0;
 
         /// <summary>
         /// Constructs a new instance of an Artifact.
@@ -27,7 +27,7 @@ namespace Unit04.Game.Casting
         /// <returns>The score.</returns>
         public int GetScore()
         {
-            return score;
+            return _score;
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Unit04.Game.Casting
         /// <param name="score">The given score.</param>
         public void SetScore(int score)
         {
-            this.score = score;
+            this._score = score;
         }
     }
 }

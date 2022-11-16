@@ -16,9 +16,9 @@ namespace Unit04.Game.Directing
     /// </summary>
     public class Director
     {   
-        public int score = 0;
-        private KeyboardService keyboardService = null;
-        private VideoService videoService = null;
+        public int _score = 0;
+        private KeyboardService _keyboardService = null;
+        private VideoService _videoService = null;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -27,8 +27,8 @@ namespace Unit04.Game.Directing
         /// <param name="videoService">The given VideoService.</param>
         public Director(KeyboardService keyboardService, VideoService videoService)
         {
-            this.keyboardService = keyboardService;
-            this.videoService = videoService;
+            this._keyboardService = keyboardService;
+            this._videoService = videoService;
         }
 
         /// <summary>
@@ -37,14 +37,14 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void StartGame(Cast cast)
         {
-            videoService.OpenWindow();
-            while (videoService.IsWindowOpen())
+            _videoService.OpenWindow();
+            while (_videoService.IsWindowOpen())
             {
                 GetInputs(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }
-            videoService.CloseWindow();
+            _videoService.CloseWindow();
         }
 
         /// <summary>
@@ -56,15 +56,15 @@ namespace Unit04.Game.Directing
             List<Actor> artifacts = cast.GetActors("artifacts");
             foreach (Actor actor in artifacts) 
             {
-                Point artifactvelocity = keyboardService.DropArtifact();
+                Point artifactvelocity = _keyboardService.DropArtifact();
                 actor.SetVelocity(artifactvelocity);
-                int maxX = videoService.GetWidth();
-                int maxY = videoService.GetHeight();
+                int maxX = _videoService.GetWidth();
+                int maxY = _videoService.GetHeight();
                 actor.MoveNext(maxX, maxY);
             }
 
             Actor robot = cast.GetFirstActor("robot");
-            Point velocity = keyboardService.GetDirection();
+            Point velocity = _keyboardService.GetDirection();
             robot.SetVelocity(velocity);     
         }
 
@@ -79,9 +79,9 @@ namespace Unit04.Game.Directing
             List<Actor> artifacts = cast.GetActors("artifacts");
 
            
-            banner.SetText($"Score: {score.ToString()}");
-            int maxX = videoService.GetWidth();
-            int maxY = videoService.GetHeight();
+            banner.SetText($"Score: {_score.ToString()}");
+            int maxX = _videoService.GetWidth();
+            int maxY = _videoService.GetHeight();
             robot.MoveNext(maxX, maxY);
 
             Random random = new Random();
@@ -90,8 +90,8 @@ namespace Unit04.Game.Directing
                 if (robot.GetPosition().Equals(actor.GetPosition()))
                 {
                     Artifact artifact = (Artifact) actor;
-                    score += artifact.GetScore();
-                    banner.SetText($"Score: {score.ToString()}");
+                    _score += artifact.GetScore();
+                    banner.SetText($"Score: {_score.ToString()}");
 
                     int x = random.Next(1, 60);
                     int y = 0;
@@ -111,9 +111,9 @@ namespace Unit04.Game.Directing
         public void DoOutputs(Cast cast)
         {
             List<Actor> actors = cast.GetAllActors();
-            videoService.ClearBuffer();
-            videoService.DrawActors(actors);
-            videoService.FlushBuffer();
+            _videoService.ClearBuffer();
+            _videoService.DrawActors(actors);
+            _videoService.FlushBuffer();
         }
 
     }
