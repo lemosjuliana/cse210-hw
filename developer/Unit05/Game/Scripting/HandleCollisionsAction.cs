@@ -18,7 +18,7 @@ namespace Unit05.Game.Scripting
     {
         private bool _isGameOver = false;
         private bool _playerOneLost = false;
-        private bool _PlayerTwoLost = false;
+        private bool _playerTwoLost = false;
         private int _count = 0;
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Unit05.Game.Scripting
             _count = _count + 1;
             if (_count % 15 == 0)
                 {
-                    PlayerOne.GrowTail(1);
-                    PlayerTwo.GrowTail(1);
-                    PlayerOneScore.AddPointsPlayerOne(1);
-                    PlayerTwoScore.AddPointsPlayerTwo(1);
+                    playerOne.GrowTail(1);
+                    playerTwo.GrowTail(1);
+                    playerOneScore.AddPointsPlayerOne(1);
+                    playerTwoScore.AddPointsPlayerTwo(1);
                 }
         }
 
@@ -131,7 +131,7 @@ namespace Unit05.Game.Scripting
 
                 if (_playerOneLost == true)
                 {
-                    foreach (Actor segment in segmentsOne)
+                    foreach (Actor segment in bodyOne)
                     {
                         int x = Constants.MAX_X / 2;
                         int y = Constants.MAX_Y / 2;
@@ -150,7 +150,7 @@ namespace Unit05.Game.Scripting
 
                  if (_playerTwoLost == true)
                 {
-                    foreach (Actor segment in segmentsOne)
+                    foreach (Actor segment in bodyTwo)
                     {
                         int x = Constants.MAX_X / 2;
                         int y = Constants.MAX_Y / 2;

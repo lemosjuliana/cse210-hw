@@ -42,7 +42,7 @@ namespace Unit05.Game.Scripting
             _videoService.DrawActors(segmentsTwo);
             _videoService.DrawActor(playerOneScore);
             _videoService.DrawActor(playerTwoScore);
-            _videoService.DrawActor(playerTwoScore);
+            //_videoService.DrawActor(playerTwoScore);
             _videoService.DrawActors(messages);
             _videoService.FlushBuffer();
         }
