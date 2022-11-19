@@ -18,7 +18,7 @@ namespace Unit05.Game
         public static int MAX_X = 900;
         public static int MAX_Y = 600;
 
-        public static int FRAME_RATE = 15;
+        public static int FRAME_RATE = 10;
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Cycle";
         public static int SNAKE_LENGTH = 5;

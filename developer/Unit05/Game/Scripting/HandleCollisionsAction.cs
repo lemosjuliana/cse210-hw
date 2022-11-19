@@ -117,28 +117,16 @@ namespace Unit05.Game.Scripting
                 List<Actor> bodyOne = playerOne.GetBody();
                 List<Actor> bodyTwo = playerTwo.GetBody();
 
-                // create a "game over" message
-                // int x = Constants.MAX_X / 2;
-                // int y = Constants.MAX_Y / 2;
-                // Point position = new Point(x, y);
-
-                // Actor message = new Actor();
-                // message.SetText("Game Over!");
-                // message.SetPosition(position);
-                // cast.AddActor("messages", message);
-
-                // make everything white
-
                 if (_playerOneLost == true)
                 {
                     foreach (Actor segment in bodyOne)
                     {
-                        int x = Constants.MAX_X / 2;
+                        int x = Constants.MAX_X / 2 - 100;
                         int y = Constants.MAX_Y / 2;
                         Point position = new Point(x, y);
 
                         Actor message = new Actor();
-                        message.SetText("Game Over!");
+                        message.SetText("Game Over! Player Two wins!");
                         message.SetPosition(position);
                         cast.AddActor("messages", message);
                         // make everything white
@@ -152,12 +140,12 @@ namespace Unit05.Game.Scripting
                 {
                     foreach (Actor segment in bodyTwo)
                     {
-                        int x = Constants.MAX_X / 2;
+                        int x = Constants.MAX_X / 2 - 100;
                         int y = Constants.MAX_Y / 2;
                         Point position = new Point(x, y);
 
                         Actor message = new Actor();
-                        message.SetText("Game Over!");
+                        message.SetText("Game Over! Player One wins!");
                         message.SetPosition(position);
                         cast.AddActor("messages", message);
                         // make everything white

@@ -34,7 +34,7 @@ namespace Unit05.Game.Scripting
             Actor playerTwoScore = cast.GetFirstActor("playerTwoScore");
 
             //Actor food = cast.GetFirstActor("food");
-            playerTwoScore.SetPosition(new Point(Constants.MAX_X -100,0));
+            playerTwoScore.SetPosition(new Point(Constants.MAX_X - 150, 0));
             List<Actor> messages = cast.GetActors("messages");
             
             _videoService.ClearBuffer();

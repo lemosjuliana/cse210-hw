@@ -101,7 +101,7 @@ namespace Unit05.Game.Casting
         private void PrepareBody()
         {
             int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
+            int y = Constants.MAX_Y / 2 + 30;
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
